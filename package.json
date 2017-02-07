@@ -1,0 +1,22 @@
+{
+  "name": "foxbot",
+  "version": "1.0.0",
+  "description": "The FoxFyre Discord Bot",
+  "main": "index.js",
+  "scripts": {
+    "test": "foxy"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/goodiesohhi/foxbot.git"
+  },
+  "keywords": [
+    "foxbot"
+  ],
+  "author": "goodiesohhi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/goodiesohhi/foxbot/issues"
+  },
+  "homepage": "https://github.com/goodiesohhi/foxbot#readme"
+}
