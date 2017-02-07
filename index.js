@@ -1,5 +1,33 @@
-
+const express = require('express')
+, stylus = require('stylus')
+  , nib = require('nib')
 const Discord = require('discord.js');
+var app = express()
+var port = process.env.PORT || 8080;
+function compile(str, path) {
+  return stylus(str)
+    .set('filename', path)
+    .use(nib())
+}
+
+
+
+app.set('views', __dirname + '/views')
+app.set('view engine', 'pug')
+
+app.use(stylus.middleware(
+  { src: __dirname + '/public'
+  , compile: compile
+  }
+))
+app.use(express.static(__dirname + '/public'))
+
+app.get('/', function (req, res) {
+  res.render('index.pug',
+    { title : 'Home' }
+    )
+})
+app.listen(port)
 
     const client = new Discord.Client();
 
@@ -12,15 +40,19 @@ const hook = new Discord.WebhookClient('277988460193906689', 'mW92pZ9fh3BryA8-AN
 
     client.on("message", function (message){
 
+      function send(txt) {
+         message.reply(txt);
+      }
+
 
 
 var commands = message.toString();
 var stringArray = commands.split(" ");
   let who = client.users.find(u => u.username === stringArray[1])
-    
 
 
-     
+
+
     if (stringArray[0] === '~avatar' ) {
 if(who) {
 if(who.avatarURL){
@@ -29,7 +61,7 @@ if(who.avatarURL){
 else {
  message.reply(who +" does not have custom avatar!");
 }
-} 
+}
 
 else
 {
