@@ -1,3 +1,9 @@
+var port = process.env.PORT || 8080;
+
+app.listen(port, function() {
+    console.log(port);
+});
+
 const Discord = require('discord.js');
 
     const client = new Discord.Client();
