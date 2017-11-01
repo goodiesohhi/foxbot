@@ -32,6 +32,7 @@ app.listen(port)
     const client = new Discord.Client();
 
 const hook = new Discord.WebhookClient('277988460193906689', 'mW92pZ9fh3BryA8-ANnVLD0PoDFNq6n-kcMqr2DRfkFr4XfWgW6QIGq0EGTlTWuflQVO');
+const hookdev = new Discord.WebhookClient('375102122129227777', 'QRxQDqCrPVdmvKKun8MimWGkprE5QNh2rOHvSbznXdmSTxnx8G6uk541PtRGnI1n26e_');
 
     client.on('ready', () => {
       console.log(`Logged in as ${client.user.username}!`);
@@ -82,3 +83,4 @@ message.reply("User not found!")
     client.login('Mjc4MjkyNDc3MzA2MzM5MzI4.C3qhCQ.9Ic4H2M1XFu-VM5j2pLS5h7YvTs');
 
 hook.sendMessage('BOT ON!');
+hook2.sendMessage('DevBot Foxy Awake and Ready <3')
